@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract football composition</title>
+  <desc id="desc">A minimal editorial illustration with a football and pitch markings.</desc>
+  <rect width="1200" height="800" fill="#d8d3b2"/>
+  <rect x="130" y="90" width="940" height="620" fill="#212932"/>
+  <path d="M600 90v620M130 400h940" stroke="#fcf9da" stroke-width="10" opacity=".65"/>
+  <circle cx="600" cy="400" r="150" fill="none" stroke="#fcf9da" stroke-width="10" opacity=".65"/>
+  <circle cx="600" cy="400" r="92" fill="#fcf9da"/>
+  <path d="m600 330 50 36-19 59h-62l-19-59 50-36Zm-50 36-56 5-31 49 38 44 68-39m81-59 56 5 31 49-38 44-68-39m-130 39-7 63 46 35 60-32m99-66 7 63-46 35-60-32m0 0v70" fill="none" stroke="#212932" stroke-width="14" stroke-linejoin="round"/>
+</svg>
