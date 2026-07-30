@@ -13,13 +13,21 @@ import { WorkPage } from './pages/WorkPage'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
+  const [showContent, setShowContent] = useState(false)
+
   const location = useLocation()
   const isProjectRoute = location.pathname.startsWith('/work/')
 
   useRouteScroll()
 
+  // Starts the loader exit animation.
   const finishLoading = useCallback(() => {
     setIsLoading(false)
+  }, [])
+
+  // Mount the website only after the loader has completely disappeared.
+  const showWebsite = useCallback(() => {
+    setShowContent(true)
     document.body.classList.remove('is-loading')
   }, [])
 
@@ -29,22 +37,36 @@ function App() {
         Skip to content
       </a>
 
-      <AnimatePresence>{isLoading ? <Loader onComplete={finishLoading} /> : null}</AnimatePresence>
+      <AnimatePresence
+        mode="wait"
+        onExitComplete={showWebsite}
+      >
+        {isLoading ? (
+          <Loader
+            key="portfolio-loader"
+            onComplete={finishLoading}
+          />
+        ) : null}
+      </AnimatePresence>
 
-      {!isProjectRoute ? <SiteHeader /> : null}
+      {showContent ? (
+        <>
+          {!isProjectRoute ? <SiteHeader /> : null}
 
-      <div id="main-content" tabIndex={-1}>
-        <AnimatePresence mode="wait" initial={false}>
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/work" element={<WorkPage />} />
-            <Route path="/work/:slug" element={<ProjectPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </AnimatePresence>
-      </div>
+          <div id="main-content" tabIndex={-1}>
+            <AnimatePresence mode="wait" initial={false}>
+              <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/work" element={<WorkPage />} />
+                <Route path="/work/:slug" element={<ProjectPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </AnimatePresence>
+          </div>
+        </>
+      ) : null}
     </>
   )
 }

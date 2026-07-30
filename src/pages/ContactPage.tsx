@@ -9,6 +9,12 @@ export function ContactPage() {
 
   return (
     <PageTransition className="contact-page theme-dark">
+      <div className="contact-page__location-row">
+        <p className="contact-page__location">
+          <span>{site.location[0]}</span>
+          <span>{site.location[1]}</span>
+        </p>
+      </div>
       <section className="contact-page__email section-pad">
         <Reveal>
           <p className="contact-page__kicker">Send a message</p>

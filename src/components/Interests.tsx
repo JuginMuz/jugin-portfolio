@@ -8,7 +8,7 @@ const interests = [
     title: 'Gaming',
     eyebrow: 'PlayStation',
     text: 'I love challenging games, especially the Dark Souls series, because they reward patience, focus and learning from mistakes.',
-    image: '/images/editorial/gaming-controller.png',
+    image: '/images/editorial/dark-souls.jpg',
     alt: 'A game controller lit in blue',
     className: 'interest-image--photo',
   },
@@ -16,7 +16,7 @@ const interests = [
     title: 'Football',
     eyebrow: 'Teamwork',
     text: 'Football was a big part of growing up. I still love playing, and I especially enjoyed the time I spent coaching children in my small hometown.',
-    image: '/images/placeholders/football.svg',
+    image: '/images/editorial/milan.jpg',
     alt: 'Abstract football illustration',
     className: 'interest-image--graphic',
   },
@@ -24,7 +24,7 @@ const interests = [
     title: 'Fitness',
     eyebrow: 'Progress',
     text: 'Training is about improving a little at a time, staying in shape and protecting the positive mental-health feeling that comes from consistency.',
-    image: '/images/placeholders/fitness.svg',
+    image: '/images/editorial/gym.webp',
     alt: 'Abstract fitness illustration',
     className: 'interest-image--graphic',
   },
@@ -37,7 +37,7 @@ export function Interests() {
 
   return (
     <section className="interests-section section-pad">
-      <SectionMeta label="D -" center="Personal interests" right="Send me a message" />
+      <SectionMeta label="C -" center="Personal interests" right="Send me a message" />
 
       <Reveal className="interests-tabs" distance={18}>
         {interests.map((interest, index) => (

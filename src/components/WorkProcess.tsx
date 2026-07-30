@@ -5,22 +5,22 @@ import { SectionMeta } from './SectionMeta'
 
 const processItems = [
   {
-    code: 'C1',
+    code: 'B1',
     title: 'Design',
     text: 'I begin by clarifying the content, hierarchy and purpose of each screen before styling individual elements.',
   },
   {
-    code: 'C2',
+    code: 'B2',
     title: 'Code',
     text: 'I translate the visual direction into reusable, semantic components with straightforward structure and readable CSS.',
   },
   {
-    code: 'C3',
+    code: 'B3',
     title: 'Testing',
     text: 'I test interactions, keyboard navigation, content states and layouts early so problems are found before the final polish.',
   },
   {
-    code: 'C4',
+    code: 'B4',
     title: 'Responsive layouts',
     text: 'I build with responsiveness in mind from the start, making sure content adapts clearly across devices without losing personality or usability.',
   },
@@ -32,7 +32,7 @@ export function WorkProcess() {
 
   return (
     <section className="process-section section-pad">
-      <SectionMeta label="C -" center="How I work" />
+      <SectionMeta label="B -" center="How I work" />
       <Reveal className="process-list">
         {processItems.map((item, index) => {
           const isActive = active === index

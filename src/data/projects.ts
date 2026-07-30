@@ -45,6 +45,11 @@ export const projects: Project[] = [
         direction: 'up',
       },
       {
+        src: '/images/projects/nexttask/home.png',
+        alt: 'NextTask home interface',
+        direction: 'up',
+      },
+      {
         src: '/images/projects/nexttask/task-list.png',
         alt: 'NextTask project and task list',
         direction: 'down',
@@ -83,6 +88,11 @@ export const projects: Project[] = [
     coverAlt: 'Roma Mia restaurant homepage',
     gallery: [
       {
+        src: '/images/projects/roma-mia/dashboard.png',
+        alt: 'Roma Mia dashboard interface',
+        direction: 'up',
+      }
+      ,{
         src: '/images/projects/roma-mia/menu.png',
         alt: 'Roma Mia menu page',
         direction: 'up',
@@ -121,6 +131,11 @@ export const projects: Project[] = [
     coverAlt: 'Peerly student collaboration platform',
     gallery: [
       {
+        src: '/images/projects/peerly/dashboard.png',
+        alt: 'Peerly dashboard interface',
+        direction: 'up',
+      },
+      {
         src: '/images/projects/peerly/login.png',
         alt: 'Peerly login page',
         direction: 'up',
@@ -149,7 +164,7 @@ export const projects: Project[] = [
     title: 'MovietoMovies',
     titleLines: ['Movieto', 'Movies'],
     category: 'Front-end development',
-    year: '2025',
+    year: '2023',
     summary:
       'React movie-search app using the OMDb API to fetch and display dynamic film results.',
     introduction:
@@ -158,6 +173,11 @@ export const projects: Project[] = [
     cover: '/images/projects/movietomovies/cover.png',
     coverAlt: 'MovietoMovies search interface',
     gallery: [
+      {
+        src: '/images/projects/movietomovies/dashboard.png',
+        alt: 'MovietoMovies dashboard interface',
+        direction: 'up',
+      },
       {
         src: '/images/projects/movietomovies/results-desktop.png',
         alt: 'MovietoMovies desktop search results',
