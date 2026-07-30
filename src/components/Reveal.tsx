@@ -8,6 +8,8 @@ export type RevealDirection =
   | 'right'
   | 'fade'
 
+export const SMOOTH_EASE = [0.16, 1, 0.3, 1] as const
+
 type RevealProps = PropsWithChildren<{
   className?: string
   delay?: number
@@ -24,20 +26,20 @@ export function getRevealOffset(
 ) {
   switch (direction) {
     case 'top':
-      return { y: -distance }
+      return { x: 0, y: -distance }
 
     case 'bottom':
-      return { y: distance }
+      return { x: 0, y: distance }
 
     case 'left':
-      return { x: -distance }
+      return { x: -distance, y: 0 }
 
     case 'right':
-      return { x: distance }
+      return { x: distance, y: 0 }
 
     case 'fade':
     default:
-      return {}
+      return { x: 0, y: 0 }
   }
 }
 
@@ -45,24 +47,22 @@ export function Reveal({
   children,
   className = '',
   delay = 0,
-  distance = 40,
-  duration = 0.8,
+  distance = 48,
+  duration = 1.15,
   direction = 'bottom',
-  amount = 0.2,
+  amount = 0.16,
   once = true,
 }: RevealProps) {
   const reduceMotion = useReducedMotion()
-
-  const offset = reduceMotion
-    ? {}
-    : getRevealOffset(direction, distance)
+  const offset = getRevealOffset(direction, distance)
 
   return (
     <motion.div
       className={className}
       initial={{
         opacity: 0,
-        ...offset,
+        x: reduceMotion ? 0 : offset.x,
+        y: reduceMotion ? 0 : offset.y,
       }}
       whileInView={{
         opacity: 1,
@@ -72,11 +72,16 @@ export function Reveal({
       viewport={{
         once,
         amount,
+        margin: '0px 0px -8% 0px',
       }}
       transition={{
-        duration: reduceMotion ? 0.15 : duration,
+        type: 'tween',
+        duration: reduceMotion ? 0.2 : duration,
         delay,
-        ease: [0.22, 1, 0.36, 1],
+        ease: SMOOTH_EASE,
+      }}
+      style={{
+        willChange: 'transform, opacity',
       }}
     >
       {children}

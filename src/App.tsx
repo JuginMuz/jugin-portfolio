@@ -10,6 +10,7 @@ import { HomePage } from './pages/HomePage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { ProjectPage } from './pages/ProjectPage'
 import { WorkPage } from './pages/WorkPage'
+import { NavigationFadeProvider } from './context/NavigationFadeContext'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -32,6 +33,7 @@ function App() {
   }, [])
 
   return (
+  <NavigationFadeProvider>
     <>
       <a className="skip-link" href="#main-content">
         Skip to content
@@ -54,13 +56,19 @@ function App() {
           {!isProjectRoute ? <SiteHeader /> : null}
 
           <div id="main-content" tabIndex={-1}>
-            <AnimatePresence mode="wait" initial={false}>
+            <AnimatePresence mode="wait">
               <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/work" element={<WorkPage />} />
-                <Route path="/work/:slug" element={<ProjectPage />} />
+                <Route
+                  path="/work/:slug"
+                  element={<ProjectPage />}
+                />
                 <Route path="/about" element={<AboutPage />} />
-                <Route path="/contact" element={<ContactPage />} />
+                <Route
+                  path="/contact"
+                  element={<ContactPage />}
+                />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </AnimatePresence>
@@ -68,7 +76,8 @@ function App() {
         </>
       ) : null}
     </>
-  )
+  </NavigationFadeProvider>
+)
 }
 
 export default App

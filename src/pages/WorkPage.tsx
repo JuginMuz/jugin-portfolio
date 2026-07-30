@@ -12,12 +12,7 @@ export function WorkPage() {
   return (
     <PageTransition className="work-page theme-light">
       <section className="work-intro section-pad">
-        <div className="work-page__location-row">
-          <p className="work-page__location">
-            <span>{site.location[0]}</span>
-            <span>{site.location[1]}</span>
-          </p>
-        </div>
+
         <div className="work-intro__grid">
         <Reveal className="work-intro__label">
           <p>A -</p>

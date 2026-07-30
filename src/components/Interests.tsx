@@ -1,6 +1,10 @@
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import {
+  AnimatePresence,
+  motion,
+  useReducedMotion,
+} from 'framer-motion'
 import { useState } from 'react'
-import { Reveal } from './Reveal'
+import { SMOOTH_EASE } from './Reveal'
 import { SectionMeta } from './SectionMeta'
 
 const interests = [
@@ -35,38 +39,107 @@ export function Interests() {
   const reduceMotion = useReducedMotion()
   const selected = interests[active]
 
+  const tabsVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        delayChildren: 0.12,
+        staggerChildren: 0.12,
+      },
+    },
+  }
+
+  const tabVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        type: 'tween' as const,
+        duration: reduceMotion ? 0.2 : 1.15,
+        ease: SMOOTH_EASE,
+      },
+    },
+  }
+
   return (
     <section className="interests-section section-pad">
-      <SectionMeta label="C -" center="Personal interests" right="Send me a message" />
+      <SectionMeta
+        label="C -"
+        center="Personal interests"
+        right="Send me a message"
+      />
 
-      <Reveal className="interests-tabs" distance={18}>
+      <motion.div
+        className="interests-tabs"
+        variants={tabsVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.35,
+          margin: '0px 0px -8% 0px',
+        }}
+      >
         {interests.map((interest, index) => (
-          <button
+          <motion.button
             className={active === index ? 'is-active' : ''}
             type="button"
             key={interest.title}
             onClick={() => setActive(index)}
+            variants={tabVariants}
           >
             {interest.title}
-          </button>
+          </motion.button>
         ))}
-      </Reveal>
+      </motion.div>
 
       <AnimatePresence mode="wait">
         <motion.div
           className="interest-panel"
           key={selected.title}
-          initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -18 }}
-          transition={{ duration: reduceMotion ? 0.12 : 0.45, ease: [0.22, 1, 0.36, 1] }}
+          initial={
+            reduceMotion
+              ? { opacity: 0 }
+              : {
+                  opacity: 0,
+                  y: 24,
+                }
+          }
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          exit={
+            reduceMotion
+              ? { opacity: 0 }
+              : {
+                  opacity: 0,
+                  y: -18,
+                }
+          }
+          transition={{
+            type: 'tween',
+            duration: reduceMotion ? 0.2 : 0.7,
+            ease: SMOOTH_EASE,
+          }}
         >
           <div className="interest-panel__copy">
-            <p className="interest-panel__eyebrow">{selected.eyebrow}</p>
+            <p className="interest-panel__eyebrow">
+              {selected.eyebrow}
+            </p>
+
             <p>{selected.text}</p>
           </div>
-          <div className={`interest-panel__image ${selected.className}`}>
-            <img src={selected.image} alt={selected.alt} />
+
+          <div
+            className={`interest-panel__image ${selected.className}`}
+          >
+            <img
+              src={selected.image}
+              alt={selected.alt}
+            />
           </div>
         </motion.div>
       </AnimatePresence>

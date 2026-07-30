@@ -10,6 +10,7 @@ import { getProject } from '../data/projects'
 import { site } from '../data/site'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
+
 export function AboutPage() {
   useDocumentTitle('About — Jugin Muzhaqi')
 
@@ -17,12 +18,6 @@ export function AboutPage() {
 
   return (
     <PageTransition className="about-page theme-light">
-      <div className="about-page__location-row">
-        <p className="about-page__location">
-          <span>{site.location[0]}</span>
-          <span>{site.location[1]}</span>
-        </p>
-      </div>
 
       <section className="about-hero section-pad">
         <div className="about-hero__grid">

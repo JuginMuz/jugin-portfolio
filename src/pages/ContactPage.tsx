@@ -9,18 +9,19 @@ export function ContactPage() {
 
   return (
     <PageTransition className="contact-page theme-dark">
-      <div className="contact-page__location-row">
-        <p className="contact-page__location">
-          <span>{site.location[0]}</span>
-          <span>{site.location[1]}</span>
-        </p>
-      </div>
+
       <section className="contact-page__email section-pad">
         <Reveal>
-          <p className="contact-page__kicker">Send a message</p>
+          <p className="contact-page__kicker">
+            Send a message
+          </p>
         </Reveal>
+
         <Reveal delay={0.06}>
-          <a className="contact-page__email-link" href={`mailto:${site.email}`}>
+          <a
+            className="contact-page__email-link"
+            href={`mailto:${site.email}`}
+          >
             <span>jugin.muzhaqi7</span>
             <span>@gmail.com</span>
           </a>
@@ -29,20 +30,30 @@ export function ContactPage() {
 
       <section className="contact-page__social section-pad">
         <Reveal>
-          <p className="contact-page__kicker">Or let’s connect on socials</p>
+          <p className="contact-page__kicker">
+            Or let’s connect on socials
+          </p>
         </Reveal>
+
         <div className="contact-page__social-links">
           {Object.entries(site.social).map(([name, url], index) => (
-            <Reveal key={name} delay={0.06 * index}>
+            <Reveal
+              key={name}
+              delay={0.06 * index}
+            >
               <motion.a
                 href={url}
                 target="_blank"
                 rel="noreferrer"
-                whileHover={{ x: 10 }}
-                transition={{ duration: 0.28 }}
+                whileHover={{
+                  x: 10,
+                }}
+                transition={{
+                  duration: 0.28,
+                }}
               >
                 {name}
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true"> ↗</span>
               </motion.a>
             </Reveal>
           ))}
@@ -53,6 +64,7 @@ export function ContactPage() {
             {site.name}
             <span>{site.role}</span>
           </p>
+
           <p>London, United Kingdom</p>
         </div>
       </section>

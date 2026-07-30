@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import {
   getRevealOffset,
+  SMOOTH_EASE,
   type RevealDirection,
 } from './Reveal'
 
@@ -27,8 +28,8 @@ export function SectionMeta({
   reveal = false,
   direction = 'bottom',
   delay = 0,
-  distance = 36,
-  duration = 0.8,
+  distance = 32,
+  duration = 1.1,
   amount = 0.2,
   once = true,
 }: SectionMetaProps) {
@@ -69,9 +70,10 @@ export function SectionMeta({
       transition={
         reveal
           ? {
-              duration: reduceMotion ? 0.15 : duration,
+              type: 'tween',
+              duration: reduceMotion ? 0.2 : duration,
               delay,
-              ease: [0.22, 1, 0.36, 1],
+              ease: SMOOTH_EASE,
             }
           : undefined
       }
