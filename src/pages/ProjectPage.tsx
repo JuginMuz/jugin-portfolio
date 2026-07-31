@@ -47,8 +47,23 @@ export function ProjectPage() {
         ease: [0.76, 0, 0.24, 1],
       }}
     >
-      <header className="project-page__topbar">
-        <p>{project.title}</p>
+      <header
+        className={`project-page__topbar ${
+          project.slug === 'movietomovies'
+            ? 'project-page__topbar--movietomovies'
+            : ''
+        }`}
+      >
+        <p className="project-page__topbar-title">
+          {project.slug === 'movietomovies' ? (
+            <>
+              <span>Movieto</span>
+              <span>Movies</span>
+            </>
+          ) : (
+            project.title
+          )}
+        </p>
 
         <a
           href={project.externalUrl}

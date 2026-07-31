@@ -618,7 +618,7 @@ ul {
 .project-list {
   display: flex;
   flex-direction: column;
-  gap: clamp(4rem, 16vw, 2rem);
+  gap: clamp(4rem, 8vw, 8rem);
 }
 
 .project-card {
@@ -1319,10 +1319,6 @@ ul {
   font-size: 0.8rem;
 }
 
-.contact-page__social-links a span[aria-hidden='true'] {
-  display: none;
-}
-
 .contact-page__footer p:first-child {
   display: flex;
   flex-direction: column;
@@ -1536,6 +1532,13 @@ ul {
 }
 
 @media (max-width: 1023px) {
+
+  .site-header__name,
+  .site-header__location,
+  .site-header__nav {
+    font-size: 23px;
+  }
+
   .home-hero__image-wrap {
     width: 67vw;
   }
@@ -1566,20 +1569,6 @@ ul {
 
   .project-page__information {
     grid-column: 1 / 6;
-  }
-}
-
-@media (max-width: 479px) {
-  :root {
-    --page-pad: 18px;
-  }
-
-  .site-header__inner {
-    column-gap: 0.6rem;
-  }
-
-  .project-page__topbar {
-    column-gap: 0.4rem;
   }
 }
 
@@ -1652,7 +1641,7 @@ ul {
   .about-hero__grid{
     padding-top: 5rem;
   }
-  
+
    .about-bio__grid > :first-child,
   .about-bio__note {
     grid-column-start: 2;
@@ -2224,6 +2213,10 @@ ul {
     content: ',\00a0';
   }
 
+  .contact-page__social-links a span[aria-hidden='true'] {
+    display: none;
+  }
+
   .work-intro {
     min-height: auto;
     padding-top: 4rem;
@@ -2671,8 +2664,25 @@ ul {
 
   .project-page__lead {
     max-width: 32rem;
-
     font-size: 1rem;
+  }
+
+  .project-page__topbar--movietomovies {
+    align-items: start;
+  }
+
+  .project-page__topbar--movietomovies
+    .project-page__topbar-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    line-height: 1.05;
+  }
+
+  .project-page__topbar--movietomovies
+    .project-page__topbar-title span {
+    display: block;
   }
 
   .project-details {
@@ -2774,8 +2784,8 @@ ul {
   .site-header__name,
   .site-header__location,
   .site-header__nav {
-    font-size: 23px;
-    line-height: 1.15;
+    font-size: 21px;
+    line-height: 1.10;
   }
 
   .contact-page__social {
@@ -2812,6 +2822,20 @@ ul {
   .contact-page__footer > p:last-child {
     justify-self: end;
     text-align: right;
+  }
+}
+
+@media (max-width: 479px) {
+  :root {
+    --page-pad: 18px;
+  }
+
+  .site-header__inner {
+    column-gap: 0.6rem;
+  }
+
+  .project-page__topbar {
+    column-gap: 0.4rem;
   }
 }
 
