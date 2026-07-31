@@ -17,13 +17,25 @@ export function ContactPage() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.06}>
+        <Reveal className="contact-page__email-wrap" delay={0.06}>
           <a
-            className="contact-page__email-link"
+            className="contact-page__email-link contact-page__email-link--desktop"
             href={`mailto:${site.email}`}
+            aria-label={site.email}
           >
             <span>jugin.muzhaqi7</span>
             <span>@gmail.com</span>
+          </a>
+
+          <a
+            className="contact-page__email-link contact-page__email-link--mobile"
+            href={`mailto:${site.email}`}
+            aria-label={site.email}
+          >
+            <span>jugin.</span>
+            <span>muzhaqi</span>
+            <span>7@gmail</span>
+            <span>.com</span>
           </a>
         </Reveal>
       </section>

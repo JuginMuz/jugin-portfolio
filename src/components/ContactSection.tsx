@@ -33,18 +33,34 @@ export function ContactSection({
         duration={0.9}
       />
 
-      <Reveal 
-        className="contact-section__email-wrap"
-        direction={revealDirection}
-        distance={55}
-        delay={0.1}
-        duration={0.95}
-      >
-        <a className="contact-section__email" href={`mailto:${site.email}`}>
-          {emailLines.map((line) => (
-            <span key={line}>{line}</span>
-          ))}
-        </a>
+      <Reveal
+          className="contact-section__email-wrap"
+          direction={revealDirection}
+          distance={48}
+          delay={0.1}
+          duration={1.25}
+        >
+          {/* Desktop email */}
+          <a
+            className="contact-section__email contact-section__email--desktop"
+            href={`mailto:${site.email}`}
+            aria-label={site.email}
+          >
+            <span>jugin.muzhaqi7</span>
+            <span>@gmail.com</span>
+          </a>
+
+          {/* Mobile email */}
+          <a
+            className="contact-section__email contact-section__email--mobile"
+            href={`mailto:${site.email}`}
+            aria-label={site.email}
+          >
+            <span>jugin.</span>
+            <span>muzhaqi</span>
+            <span>7@gmail</span>
+            <span>.com</span>
+          </a>
       </Reveal>
 
       <div className="contact-section__footer">
@@ -62,7 +78,7 @@ export function ContactSection({
               whileHover={{ y: -4, opacity: 0.72 }}
             >
               {name.charAt(0).toUpperCase() + name.slice(1)}
-              <span aria-hidden="true"> ↗</span>
+              <span className="contact-section__social-arrow" aria-hidden="true"> ↗</span>
             </motion.a>
           ))}
         </div>
