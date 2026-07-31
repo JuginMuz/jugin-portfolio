@@ -1,13 +1,197 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jugin-portfolio</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <!-- Restore React Router paths after a GitHub Pages 404 redirect -->
+    <script>
+      try {
+        const redirectUrl = sessionStorage.getItem(
+          'jugin-portfolio-redirect',
+        )
+
+        if (redirectUrl) {
+          sessionStorage.removeItem(
+            'jugin-portfolio-redirect',
+          )
+
+          const url = new URL(redirectUrl)
+
+          window.history.replaceState(
+            null,
+            '',
+            `${url.pathname}${url.search}${url.hash}`,
+          )
+        }
+      } catch {
+        // The website can still load if sessionStorage is unavailable.
+      }
+    </script>
+
+    <title>
+      Jugin Muzhaqi — Web Developer & Designer in London
+    </title>
+
+    <meta
+      name="description"
+      content="Portfolio of Jugin Muzhaqi, a London-based web developer and designer creating responsive, accessible and user-focused websites."
+    />
+
+    <meta name="author" content="Jugin Muzhaqi" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#fcf9da" />
+
+    <link
+      rel="canonical"
+      href="https://juginmuz.github.io/jugin-portfolio/"
+    />
+
+    <!-- Open Graph fallback metadata -->
+    <meta
+      property="og:title"
+      content="Jugin Muzhaqi — Web Developer & Designer in London"
+    />
+
+    <meta
+      property="og:description"
+      content="Portfolio of Jugin Muzhaqi, a London-based web developer and designer creating responsive, accessible and user-focused websites."
+    />
+
+    <meta property="og:type" content="website" />
+
+    <meta
+      property="og:url"
+      content="https://juginmuz.github.io/jugin-portfolio/"
+    />
+
+    <meta
+      property="og:image"
+      content="https://juginmuz.github.io/jugin-portfolio/images/editorial/hero-portrait.png"
+    />
+
+    <meta
+      property="og:image:alt"
+      content="Jugin Muzhaqi, web developer and designer based in London"
+    />
+
+    <meta
+      property="og:site_name"
+      content="Jugin Muzhaqi"
+    />
+
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter / X fallback metadata -->
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+
+    <meta
+      name="twitter:title"
+      content="Jugin Muzhaqi — Web Developer & Designer in London"
+    />
+
+    <meta
+      name="twitter:description"
+      content="Portfolio of Jugin Muzhaqi, a London-based web developer and designer creating responsive, accessible and user-focused websites."
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://juginmuz.github.io/jugin-portfolio/images/editorial/hero-portrait.png"
+    />
+
+    <meta
+      name="twitter:image:alt"
+      content="Jugin Muzhaqi, web developer and designer based in London"
+    />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://juginmuz.github.io/jugin-portfolio/#person",
+            "name": "Jugin Muzhaqi",
+            "url": "https://juginmuz.github.io/jugin-portfolio/",
+            "image": "https://juginmuz.github.io/jugin-portfolio/images/editorial/hero-portrait.png",
+            "jobTitle": "Web Developer",
+            "email": "mailto:jugin.muzhaqi7@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "GB"
+            },
+            "sameAs": [
+              "https://github.com/JuginMuz",
+              "https://www.linkedin.com/in/jugin-muzhaqi-a1312219a/",
+              "https://www.instagram.com/juginmuz/"
+            ],
+            "knowsAbout": [
+              "Web development",
+              "Web design",
+              "Responsive design",
+              "Accessibility",
+              "React",
+              "TypeScript"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://juginmuz.github.io/jugin-portfolio/#website",
+            "url": "https://juginmuz.github.io/jugin-portfolio/",
+            "name": "Jugin Muzhaqi",
+            "description": "Portfolio of Jugin Muzhaqi, a London-based web developer and designer creating responsive, accessible and user-focused websites.",
+            "inLanguage": "en-GB",
+            "publisher": {
+              "@id": "https://juginmuz.github.io/jugin-portfolio/#person"
+            }
+          }
+        ]
+      }
+    </script>
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon-jm.svg"    />
+
+    <link
+      rel="shortcut icon"
+      href="%BASE_URL%favicon-jm.svg?v=2"
+    />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+
+    <script
+      type="module"
+      src="/src/main.tsx"
+    ></script>
   </body>
 </html>
