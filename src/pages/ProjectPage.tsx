@@ -2,18 +2,24 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { Reveal } from '../components/Reveal'
 import { getProject } from '../data/projects'
-import { useDocumentTitle } from '../hooks/useDocumentTitle'
+import { usePageMeta } from '../hooks/usePageMeta'
 
 export function ProjectPage() {
   const { slug = '' } = useParams()
   const project = getProject(slug)
   const reduceMotion = useReducedMotion()
 
-  useDocumentTitle(
-    project
-      ? `${project.title} — Jugin Muzhaqi`
-      : 'Project not found',
-  )
+  usePageMeta({
+    title: project
+      ? `${project.title} Case Study — Jugin Muzhaqi`
+      : 'Project Not Found — Jugin Muzhaqi',
+    description: project
+      ? project.introduction
+      : 'The requested project could not be found.',
+    image: project?.cover,
+    type: 'article',
+    noIndex: !project,
+  })
 
   if (!project) {
     return <Navigate to="/work" replace />

@@ -7,10 +7,15 @@ import { ProjectCard } from '../components/ProjectCard'
 import { Reveal, SMOOTH_EASE } from '../components/Reveal'
 import { SectionMeta } from '../components/SectionMeta'
 import { projects } from '../data/projects'
-import { useDocumentTitle } from '../hooks/useDocumentTitle'
+import { usePageMeta } from '../hooks/usePageMeta'
+import { site } from '../data/site'
+import { assetPath } from '../utils/assetPath'
 
 export function HomePage() {
-  useDocumentTitle('Jugin Muzhaqi — Web Developer')
+  usePageMeta({
+    title: 'Jugin Muzhaqi — Web Developer & Designer in London',
+    description: site.description,
+  })
 
   const reduceMotion = useReducedMotion()
 
@@ -67,7 +72,7 @@ export function HomePage() {
         >
           <ParallaxImage
             className="home-hero__portrait"
-            src="/images/editorial/hero-portrait.png"
+            src={assetPath('images/editorial/hero-portrait.png')}
             alt="Jugin Muzhaqi standing with his arms crossed"
             amount={8}
             direction="up"
@@ -190,7 +195,7 @@ export function HomePage() {
 
           <div className="home-about__image">
             <ParallaxImage
-              src="/images/editorial/dark-souls3.avif"
+              src={assetPath('images/editorial/dark-souls3.avif')}
               alt="Dark Souls scene"
               amount={38}
               direction="down"

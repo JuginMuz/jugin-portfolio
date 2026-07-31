@@ -2,10 +2,14 @@ import { motion } from 'framer-motion'
 import { PageTransition } from '../components/PageTransition'
 import { Reveal } from '../components/Reveal'
 import { site } from '../data/site'
-import { useDocumentTitle } from '../hooks/useDocumentTitle'
+import { usePageMeta } from '../hooks/usePageMeta'
 
 export function ContactPage() {
-  useDocumentTitle('Contact — Jugin Muzhaqi')
+  usePageMeta({
+    title: 'Contact Jugin Muzhaqi — Web Developer',
+    description:
+      'Contact London-based web developer and designer Jugin Muzhaqi for employment opportunities, collaborations and web projects.',
+  })
 
   return (
     <PageTransition className="contact-page theme-dark">

@@ -3,10 +3,14 @@ import { PageTransition } from '../components/PageTransition'
 import { ProjectCard } from '../components/ProjectCard'
 import { Reveal } from '../components/Reveal'
 import { projects } from '../data/projects'
-import { useDocumentTitle } from '../hooks/useDocumentTitle'
+import { usePageMeta } from '../hooks/usePageMeta'
 
 export function WorkPage() {
-  useDocumentTitle('Work — Jugin Muzhaqi')
+  usePageMeta({
+    title: 'Web Development Projects — Jugin Muzhaqi',
+    description:
+      'Explore web development and design projects by Jugin Muzhaqi, including responsive websites, accessible interfaces and React applications.',
+  })
 
   return (
     <PageTransition className="work-page theme-light">

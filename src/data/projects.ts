@@ -1,3 +1,5 @@
+import { assetPath } from '../utils/assetPath'
+
 export type Project = {
   slug: string
   title: string
@@ -9,7 +11,11 @@ export type Project = {
   stack: string[]
   cover: string
   coverAlt: string
-  gallery: Array<{ src: string; alt: string; direction: 'up' | 'down' }>
+  gallery: Array<{
+    src: string
+    alt: string
+    direction: 'up' | 'down'
+  }>
   learning: string[]
   externalUrl: string
   externalLabel: string
@@ -36,31 +42,31 @@ export const projects: Project[] = [
       'PostgreSQL',
       'Prisma',
     ],
-    cover: '/images/projects/nexttask/cover.png',
+    cover: assetPath('images/projects/nexttask/cover.png'),
     coverAlt: 'NextTask accessibility settings screen',
     gallery: [
       {
-        src: '/images/projects/nexttask/dashboard.png',
+        src: assetPath('images/projects/nexttask/dashboard.png'),
         alt: 'NextTask dashboard interface',
         direction: 'up',
       },
       {
-        src: '/images/projects/nexttask/home.png',
+        src: assetPath('images/projects/nexttask/home.png'),
         alt: 'NextTask home interface',
         direction: 'up',
       },
       {
-        src: '/images/projects/nexttask/task-list.png',
+        src: assetPath('images/projects/nexttask/task-list.png'),
         alt: 'NextTask project and task list',
         direction: 'down',
       },
       {
-        src: '/images/projects/nexttask/focus-session.png',
+        src: assetPath('images/projects/nexttask/focus-session.png'),
         alt: 'NextTask focus session timer',
         direction: 'up',
       },
       {
-        src: '/images/projects/nexttask/settings.png',
+        src: assetPath('images/projects/nexttask/settings.png'),
         alt: 'NextTask accessibility settings',
         direction: 'down',
       },
@@ -84,26 +90,26 @@ export const projects: Project[] = [
     introduction:
       'A university web design project focused on structure, responsive layouts, restaurant branding, menu presentation and an online reservation flow.',
     stack: ['HTML', 'CSS', 'JavaScript'],
-    cover: '/images/projects/roma-mia/cover.png',
+    cover: assetPath('images/projects/roma-mia/cover.png'),
     coverAlt: 'Roma Mia restaurant homepage',
     gallery: [
       {
-        src: '/images/projects/roma-mia/dashboard.png',
+        src: assetPath('images/projects/roma-mia/dashboard.png'),
         alt: 'Roma Mia dashboard interface',
         direction: 'up',
-      }
-      ,{
-        src: '/images/projects/roma-mia/menu.png',
+      },
+      {
+        src: assetPath('images/projects/roma-mia/menu.png'),
         alt: 'Roma Mia menu page',
         direction: 'up',
       },
       {
-        src: '/images/projects/roma-mia/booking.png',
+        src: assetPath('images/projects/roma-mia/booking.png'),
         alt: 'Roma Mia reservation page',
         direction: 'down',
       },
       {
-        src: '/images/projects/roma-mia/mobile-hero.png',
+        src: assetPath('images/projects/roma-mia/mobile-hero.png'),
         alt: 'Roma Mia mobile homepage',
         direction: 'up',
       },
@@ -126,27 +132,36 @@ export const projects: Project[] = [
       'Student collaboration platform combining social-media and forum features for university students.',
     introduction:
       'A team project focused on student collaboration, academic discussions, resource sharing and full-stack web development.',
-    stack: ['HTML', 'CSS', 'JavaScript', 'Pug', 'Node.js', 'Express', 'MySQL', 'Docker'],
-    cover: '/images/projects/peerly/cover.png',
+    stack: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Pug',
+      'Node.js',
+      'Express',
+      'MySQL',
+      'Docker',
+    ],
+    cover: assetPath('images/projects/peerly/cover.png'),
     coverAlt: 'Peerly student collaboration platform',
     gallery: [
       {
-        src: '/images/projects/peerly/dashboard.png',
+        src: assetPath('images/projects/peerly/dashboard.png'),
         alt: 'Peerly dashboard interface',
         direction: 'up',
       },
       {
-        src: '/images/projects/peerly/login.png',
+        src: assetPath('images/projects/peerly/login.png'),
         alt: 'Peerly login page',
         direction: 'up',
       },
       {
-        src: '/images/projects/peerly/feed.png',
+        src: assetPath('images/projects/peerly/feed.png'),
         alt: 'Peerly activity feed',
         direction: 'down',
       },
       {
-        src: '/images/projects/peerly/profile.png',
+        src: assetPath('images/projects/peerly/profile.png'),
         alt: 'Peerly student profile',
         direction: 'up',
       },
@@ -170,26 +185,32 @@ export const projects: Project[] = [
     introduction:
       'A front-end project focused on API requests, search functionality, React state management and responsive result cards.',
     stack: ['React', 'JavaScript', 'HTML', 'CSS', 'OMDb API'],
-    cover: '/images/projects/movietomovies/cover.png',
+    cover: assetPath('images/projects/movietomovies/cover.png'),
     coverAlt: 'MovietoMovies search interface',
     gallery: [
       {
-        src: '/images/projects/movietomovies/dashboard.png',
+        src: assetPath('images/projects/movietomovies/dashboard.png'),
         alt: 'MovietoMovies dashboard interface',
         direction: 'up',
       },
       {
-        src: '/images/projects/movietomovies/results-desktop.png',
+        src: assetPath(
+          'images/projects/movietomovies/results-desktop.png',
+        ),
         alt: 'MovietoMovies desktop search results',
         direction: 'up',
       },
       {
-        src: '/images/projects/movietomovies/card-closeup.png',
+        src: assetPath(
+          'images/projects/movietomovies/card-closeup.png',
+        ),
         alt: 'MovietoMovies result card close-up',
         direction: 'down',
       },
       {
-        src: '/images/projects/movietomovies/results-mobile.png',
+        src: assetPath(
+          'images/projects/movietomovies/results-mobile.png',
+        ),
         alt: 'MovietoMovies mobile search results',
         direction: 'up',
       },
@@ -198,10 +219,14 @@ export const projects: Project[] = [
       'This project improved my understanding of API requests, React hooks and dynamic rendering.',
       'I also learned to manage search input, present external data clearly and design result cards that adapt across screen sizes.',
     ],
-    externalUrl: 'https://juginmuz.github.io/Movietomovies-API/',
+    externalUrl:
+      'https://juginmuz.github.io/Movietomovies-API/',
     externalLabel: 'Visit site',
-    repositoryUrl: 'https://github.com/JuginMuz/Movietomovies-API',
+    repositoryUrl:
+      'https://github.com/JuginMuz/Movietomovies-API',
   },
 ]
 
-export const getProject = (slug: string) => projects.find((project) => project.slug === slug)
+export function getProject(slug: string): Project | undefined {
+  return projects.find((project) => project.slug === slug)
+}

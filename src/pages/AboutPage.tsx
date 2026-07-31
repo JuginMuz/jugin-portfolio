@@ -7,11 +7,16 @@ import { Reveal } from '../components/Reveal'
 import { SectionMeta } from '../components/SectionMeta'
 import { WorkProcess } from '../components/WorkProcess'
 import { getProject } from '../data/projects'
-import { useDocumentTitle } from '../hooks/useDocumentTitle'
+import { usePageMeta } from '../hooks/usePageMeta'
+import { assetPath } from '../utils/assetPath'
 
 
 export function AboutPage() {
-  useDocumentTitle('About — Jugin Muzhaqi')
+  usePageMeta({
+    title: 'About Jugin Muzhaqi — London Web Developer',
+    description:
+      'Learn more about Jugin Muzhaqi, a London-based web developer and designer focused on responsive, accessible and user-friendly digital experiences.',
+  })
 
   const romaMia = getProject('roma-mia')
 
@@ -33,7 +38,7 @@ export function AboutPage() {
 
           <div className="about-hero__image">
             <ParallaxImage
-              src="/images/editorial/about-laptop.png"
+              src={assetPath('images/editorial/about-laptop.png')}
               alt="Hands typing on a laptop"
               amount={28}
               direction="up"

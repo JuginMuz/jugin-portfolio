@@ -14,7 +14,6 @@ type ContactSectionProps = {
 
 
 
-const emailLines = ['jugin.muzhaqi7', '@gmail.com']
 
 export function ContactSection({
   label = 'D -',
