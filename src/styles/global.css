@@ -341,18 +341,6 @@ ul {
   position: relative;
 }
 
-.home-hero__location {
-  grid-column: 5 / span 3;
-  display: flex;
-  flex-direction: column;
-  width: max-content;
-  margin: 0;
-  font-size: clamp(1.05rem, 1.35vw, 1.5rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.015em;
-}
-
 .home-hero__title {
   display: grid;
   justify-items: start;
@@ -513,7 +501,7 @@ ul {
 .project-list {
   display: flex;
   flex-direction: column;
-  gap: clamp(4rem, 10vw, 12rem);
+  gap: clamp(4rem, 16vw, 2rem);
 }
 
 .project-card {
@@ -614,7 +602,7 @@ ul {
 .featured-work__all-link {
   display: flex;
   justify-content: flex-end;
-  margin-top: clamp(3rem, 6vw, 5rem);
+  margin-top: clamp(5rem, 9vw, 3rem);
 }
 
 .home-about {
@@ -1447,10 +1435,7 @@ ul {
   }
 
   .site-header {
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
-    align-items: center;
-    padding-top: 1rem;
+    padding: 1rem var(--page-pad);
   }
 
   .site-header__inner {

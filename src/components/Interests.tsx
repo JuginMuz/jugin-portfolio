@@ -88,6 +88,7 @@ export function Interests() {
             type="button"
             key={interest.title}
             onClick={() => setActive(index)}
+            aria-pressed={active === index}
             variants={tabVariants}
           >
             {interest.title}
