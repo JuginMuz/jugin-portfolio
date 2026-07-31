@@ -4,7 +4,6 @@ import { ProjectCard } from '../components/ProjectCard'
 import { Reveal } from '../components/Reveal'
 import { projects } from '../data/projects'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
-import { site } from '../data/site'
 
 export function WorkPage() {
   useDocumentTitle('Work — Jugin Muzhaqi')

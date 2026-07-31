@@ -7,7 +7,6 @@ import { Reveal } from '../components/Reveal'
 import { SectionMeta } from '../components/SectionMeta'
 import { WorkProcess } from '../components/WorkProcess'
 import { getProject } from '../data/projects'
-import { site } from '../data/site'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 
